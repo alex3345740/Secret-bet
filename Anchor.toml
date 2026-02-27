@@ -1,0 +1,29 @@
+[toolchain]
+package_manager = "npm"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+hidden_bet_core = "2DVDuGDWRMhwvSPcyCWz5sAft2T1Dt1tgQio6cUgNDVh"
+hidden_bet_plinko = "Ao5MS1NuDFYxfMoSmYrY6iSpJ343t35j1XnbKiaSEzs"
+hidden_bet_roulette = "iFTY1vz8n1c24Sb9EWXkvzYJFsSH7yvdaYYsbE5MGcD"
+hidden_bet_slots = "4bJWKYAfAjuQDCHxxn57bXfq44jawFUwc7W16zKYgUXj"
+
+[programs.localnet]
+hidden_bet_core = "2DVDuGDWRMhwvSPcyCWz5sAft2T1Dt1tgQio6cUgNDVh"
+hidden_bet_plinko = "Ao5MS1NuDFYxfMoSmYrY6iSpJ343t35j1XnbKiaSEzs"
+hidden_bet_roulette = "iFTY1vz8n1c24Sb9EWXkvzYJFsSH7yvdaYYsbE5MGcD"
+hidden_bet_slots = "4bJWKYAfAjuQDCHxxn57bXfq44jawFUwc7W16zKYgUXj"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "bash scripts/localnet/run-anchor-tests.sh"
+test_devnet = "bash scripts/devnet/run-anchor-tests.sh"

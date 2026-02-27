@@ -1,0 +1,1989 @@
+{
+  "address": "2DVDuGDWRMhwvSPcyCWz5sAft2T1Dt1tgQio6cUgNDVh",
+  "metadata": {
+    "name": "hidden_bet_core",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Hidden Bet core lifecycle and treasury program"
+  },
+  "instructions": [
+    {
+      "name": "apply_private_round_delta_v2",
+      "discriminator": [
+        89,
+        131,
+        20,
+        242,
+        186,
+        214,
+        47,
+        50
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "signer": true
+        },
+        {
+          "name": "player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  112,
+                  114,
+                  105,
+                  118,
+                  97,
+                  116,
+                  101,
+                  95,
+                  108,
+                  101,
+                  100,
+                  103,
+                  101,
+                  114,
+                  95,
+                  118,
+                  50
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ApplyPrivateRoundDeltaV2Args"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "commit_and_undelegate_player_context",
+      "discriminator": [
+        243,
+        205,
+        185,
+        186,
+        127,
+        71,
+        60,
+        244
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player"
+        },
+        {
+          "name": "player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  115,
+                  101,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              },
+              {
+                "kind": "account",
+                "path": "player_session.nonce",
+                "account": "PlayerSession"
+              }
+            ]
+          }
+        },
+        {
+          "name": "magic_program",
+          "address": "Magic11111111111111111111111111111111111111"
+        },
+        {
+          "name": "magic_context",
+          "writable": true,
+          "address": "MagicContext1111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "commit_and_undelegate_private_ledger_context_v2",
+      "discriminator": [
+        196,
+        102,
+        6,
+        94,
+        77,
+        145,
+        254,
+        218
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player"
+        },
+        {
+          "name": "player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  112,
+                  114,
+                  105,
+                  118,
+                  97,
+                  116,
+                  101,
+                  95,
+                  108,
+                  101,
+                  100,
+                  103,
+                  101,
+                  114,
+                  95,
+                  118,
+                  50
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "magic_program",
+          "address": "Magic11111111111111111111111111111111111111"
+        },
+        {
+          "name": "magic_context",
+          "writable": true,
+          "address": "MagicContext1111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "commit_player_context",
+      "discriminator": [
+        104,
+        245,
+        214,
+        108,
+        30,
+        181,
+        210,
+        241
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player"
+        },
+        {
+          "name": "player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  115,
+                  101,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              },
+              {
+                "kind": "account",
+                "path": "player_session.nonce",
+                "account": "PlayerSession"
+              }
+            ]
+          }
+        },
+        {
+          "name": "magic_program",
+          "address": "Magic11111111111111111111111111111111111111"
+        },
+        {
+          "name": "magic_context",
+          "writable": true,
+          "address": "MagicContext1111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "delegate_player_context",
+      "discriminator": [
+        28,
+        213,
+        212,
+        154,
+        111,
+        74,
+        95,
+        63
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player"
+        },
+        {
+          "name": "buffer_player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  117,
+                  102,
+                  102,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player_session"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                18,
+                14,
+                145,
+                94,
+                10,
+                189,
+                244,
+                228,
+                5,
+                113,
+                213,
+                3,
+                92,
+                120,
+                133,
+                230,
+                138,
+                135,
+                209,
+                38,
+                117,
+                254,
+                194,
+                37,
+                196,
+                12,
+                161,
+                172,
+                61,
+                10,
+                250,
+                8
+              ]
+            }
+          }
+        },
+        {
+          "name": "delegation_record_player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player_session"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "delegation_program"
+            }
+          }
+        },
+        {
+          "name": "delegation_metadata_player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110,
+                  45,
+                  109,
+                  101,
+                  116,
+                  97,
+                  100,
+                  97,
+                  116,
+                  97
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player_session"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "delegation_program"
+            }
+          }
+        },
+        {
+          "name": "player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  115,
+                  101,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              },
+              {
+                "kind": "arg",
+                "path": "session_nonce"
+              }
+            ]
+          }
+        },
+        {
+          "name": "owner_program",
+          "address": "2DVDuGDWRMhwvSPcyCWz5sAft2T1Dt1tgQio6cUgNDVh"
+        },
+        {
+          "name": "delegation_program",
+          "address": "DELeGGvXpWV2fqJUhqcF5ZSYMS4JTLjteaAMARRSaeSh"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "session_nonce",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "delegate_private_ledger_context_v2",
+      "discriminator": [
+        64,
+        162,
+        31,
+        81,
+        134,
+        172,
+        125,
+        156
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player"
+        },
+        {
+          "name": "buffer_player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  117,
+                  102,
+                  102,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player_private_ledger_v2"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                18,
+                14,
+                145,
+                94,
+                10,
+                189,
+                244,
+                228,
+                5,
+                113,
+                213,
+                3,
+                92,
+                120,
+                133,
+                230,
+                138,
+                135,
+                209,
+                38,
+                117,
+                254,
+                194,
+                37,
+                196,
+                12,
+                161,
+                172,
+                61,
+                10,
+                250,
+                8
+              ]
+            }
+          }
+        },
+        {
+          "name": "delegation_record_player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player_private_ledger_v2"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "delegation_program"
+            }
+          }
+        },
+        {
+          "name": "delegation_metadata_player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110,
+                  45,
+                  109,
+                  101,
+                  116,
+                  97,
+                  100,
+                  97,
+                  116,
+                  97
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player_private_ledger_v2"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "delegation_program"
+            }
+          }
+        },
+        {
+          "name": "player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  112,
+                  114,
+                  105,
+                  118,
+                  97,
+                  116,
+                  101,
+                  95,
+                  108,
+                  101,
+                  100,
+                  103,
+                  101,
+                  114,
+                  95,
+                  118,
+                  50
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "owner_program",
+          "address": "2DVDuGDWRMhwvSPcyCWz5sAft2T1Dt1tgQio6cUgNDVh"
+        },
+        {
+          "name": "delegation_program",
+          "address": "DELeGGvXpWV2fqJUhqcF5ZSYMS4JTLjteaAMARRSaeSh"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "finalize_withdraw_private_v2",
+      "discriminator": [
+        199,
+        106,
+        114,
+        218,
+        200,
+        202,
+        170,
+        228
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "signer": true
+        },
+        {
+          "name": "player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  112,
+                  114,
+                  105,
+                  118,
+                  97,
+                  116,
+                  101,
+                  95,
+                  108,
+                  101,
+                  100,
+                  103,
+                  101,
+                  114,
+                  95,
+                  118,
+                  50
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "expected_commitment",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "initialize_platform",
+      "discriminator": [
+        119,
+        201,
+        101,
+        45,
+        75,
+        122,
+        89,
+        3
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "InitializePlatformArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "initialize_player",
+      "discriminator": [
+        79,
+        249,
+        88,
+        177,
+        220,
+        62,
+        56,
+        128
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player_profile",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  112,
+                  114,
+                  111,
+                  102,
+                  105,
+                  108,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_private_ledger_v2",
+      "discriminator": [
+        142,
+        228,
+        169,
+        24,
+        253,
+        247,
+        11,
+        93
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  112,
+                  114,
+                  105,
+                  118,
+                  97,
+                  116,
+                  101,
+                  95,
+                  108,
+                  101,
+                  100,
+                  103,
+                  101,
+                  114,
+                  95,
+                  118,
+                  50
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "open_player_session",
+      "discriminator": [
+        80,
+        246,
+        172,
+        43,
+        8,
+        232,
+        104,
+        65
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player_profile",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  112,
+                  114,
+                  111,
+                  102,
+                  105,
+                  108,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  115,
+                  101,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              },
+              {
+                "kind": "arg",
+                "path": "args.session_nonce"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "OpenPlayerSessionArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "process_undelegation",
+      "discriminator": [
+        196,
+        28,
+        41,
+        206,
+        48,
+        37,
+        51,
+        167
+      ],
+      "accounts": [
+        {
+          "name": "base_account",
+          "writable": true
+        },
+        {
+          "name": "buffer"
+        },
+        {
+          "name": "payer",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "account_seeds",
+          "type": {
+            "vec": "bytes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "request_withdraw_private_v2",
+      "discriminator": [
+        47,
+        19,
+        223,
+        165,
+        135,
+        192,
+        241,
+        70
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "signer": true
+        },
+        {
+          "name": "player_private_ledger_v2",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  112,
+                  114,
+                  105,
+                  118,
+                  97,
+                  116,
+                  101,
+                  95,
+                  108,
+                  101,
+                  100,
+                  103,
+                  101,
+                  114,
+                  95,
+                  118,
+                  50
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "RequestWithdrawPrivateV2Args"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_platform_runtime",
+      "discriminator": [
+        245,
+        132,
+        71,
+        14,
+        65,
+        171,
+        124,
+        64
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "platform_config"
+          ]
+        },
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "UpdatePlatformRuntimeArgs"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "PlatformConfig",
+      "discriminator": [
+        160,
+        78,
+        128,
+        0,
+        248,
+        83,
+        230,
+        160
+      ]
+    },
+    {
+      "name": "PlayerPrivateLedgerV2",
+      "discriminator": [
+        245,
+        74,
+        54,
+        121,
+        73,
+        83,
+        49,
+        108
+      ]
+    },
+    {
+      "name": "PlayerProfile",
+      "discriminator": [
+        82,
+        226,
+        99,
+        87,
+        164,
+        130,
+        181,
+        80
+      ]
+    },
+    {
+      "name": "PlayerSession",
+      "discriminator": [
+        89,
+        95,
+        51,
+        45,
+        127,
+        42,
+        173,
+        223
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "ContextCommitted",
+      "discriminator": [
+        60,
+        39,
+        34,
+        152,
+        134,
+        134,
+        62,
+        5
+      ]
+    },
+    {
+      "name": "ContextDelegated",
+      "discriminator": [
+        37,
+        22,
+        102,
+        0,
+        94,
+        193,
+        154,
+        111
+      ]
+    },
+    {
+      "name": "ContextUndelegated",
+      "discriminator": [
+        198,
+        181,
+        127,
+        34,
+        29,
+        187,
+        244,
+        196
+      ]
+    },
+    {
+      "name": "PlatformInitialized",
+      "discriminator": [
+        16,
+        222,
+        212,
+        5,
+        213,
+        140,
+        112,
+        162
+      ]
+    },
+    {
+      "name": "PlatformRuntimeUpdated",
+      "discriminator": [
+        155,
+        187,
+        120,
+        135,
+        155,
+        25,
+        152,
+        61
+      ]
+    },
+    {
+      "name": "PlayerInitialized",
+      "discriminator": [
+        214,
+        37,
+        153,
+        142,
+        63,
+        109,
+        206,
+        15
+      ]
+    },
+    {
+      "name": "PlayerSessionOpened",
+      "discriminator": [
+        141,
+        10,
+        192,
+        102,
+        103,
+        242,
+        245,
+        77
+      ]
+    },
+    {
+      "name": "PrivateLedgerInitializedV2",
+      "discriminator": [
+        211,
+        166,
+        154,
+        27,
+        169,
+        31,
+        121,
+        183
+      ]
+    },
+    {
+      "name": "PrivateRoundDeltaAppliedV2",
+      "discriminator": [
+        84,
+        167,
+        147,
+        8,
+        22,
+        98,
+        123,
+        72
+      ]
+    },
+    {
+      "name": "PrivateWithdrawFinalizedV2",
+      "discriminator": [
+        120,
+        22,
+        120,
+        207,
+        77,
+        203,
+        25,
+        244
+      ]
+    },
+    {
+      "name": "PrivateWithdrawRequestedV2",
+      "discriminator": [
+        78,
+        36,
+        156,
+        208,
+        101,
+        170,
+        169,
+        154
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidSessionExpiry",
+      "msg": "Session expiration must be in the future."
+    },
+    {
+      "code": 6001,
+      "name": "InvalidExposureLimit",
+      "msg": "Max exposure basis points must be <= 10_000."
+    },
+    {
+      "code": 6002,
+      "name": "UnauthorizedLedgerMutation",
+      "msg": "Ledger mutation is not authorized for this player."
+    },
+    {
+      "code": 6003,
+      "name": "LedgerOverflow",
+      "msg": "Private ledger arithmetic overflowed."
+    },
+    {
+      "code": 6004,
+      "name": "InvalidSettlementNonce",
+      "msg": "Settlement nonce must increase strictly by one."
+    },
+    {
+      "code": 6005,
+      "name": "InvalidWithdrawExpiry",
+      "msg": "Withdraw intent expiry must be in the future."
+    },
+    {
+      "code": 6006,
+      "name": "WithdrawNonceMismatch",
+      "msg": "Withdraw nonce does not match the current pending nonce."
+    },
+    {
+      "code": 6007,
+      "name": "WithdrawCommitmentMismatch",
+      "msg": "Withdraw commitment does not match the pending intent."
+    },
+    {
+      "code": 6008,
+      "name": "WithdrawIntentExpired",
+      "msg": "Withdraw intent has already expired."
+    }
+  ],
+  "types": [
+    {
+      "name": "ApplyPrivateRoundDeltaV2Args",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "balance_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "settlement_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "settlement_nonce",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ContextCommitted",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "context",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ContextDelegated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "context",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ContextUndelegated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "context",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InitializePlatformArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "treasury_sol_vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury_usdc_vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "vrf_queue",
+            "type": "pubkey"
+          },
+          {
+            "name": "er_validator_identity",
+            "type": "pubkey"
+          },
+          {
+            "name": "max_exposure_bps",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OpenPlayerSessionArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "session_nonce",
+            "type": "u64"
+          },
+          {
+            "name": "expires_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlatformConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury_sol_vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury_usdc_vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "vrf_queue",
+            "type": "pubkey"
+          },
+          {
+            "name": "er_validator_identity",
+            "type": "pubkey"
+          },
+          {
+            "name": "max_exposure_bps",
+            "type": "u16"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlatformInitialized",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "max_exposure_bps",
+            "type": "u16"
+          },
+          {
+            "name": "vrf_queue",
+            "type": "pubkey"
+          },
+          {
+            "name": "er_validator_identity",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlatformRuntimeUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "max_exposure_bps",
+            "type": "u16"
+          },
+          {
+            "name": "vrf_queue",
+            "type": "pubkey"
+          },
+          {
+            "name": "er_validator_identity",
+            "type": "pubkey"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerInitialized",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerPrivateLedgerV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "balance_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "last_settlement_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "last_settlement_nonce",
+            "type": "u64"
+          },
+          {
+            "name": "pending_withdraw_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "pending_withdraw_nonce",
+            "type": "u64"
+          },
+          {
+            "name": "pending_withdraw_expires_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerProfile",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "rounds_played",
+            "type": "u64"
+          },
+          {
+            "name": "net_pnl_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerSession",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          },
+          {
+            "name": "opened_at",
+            "type": "i64"
+          },
+          {
+            "name": "expires_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerSessionOpened",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          },
+          {
+            "name": "expires_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivateLedgerInitializedV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "ledger",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivateRoundDeltaAppliedV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "settlement_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "settlement_nonce",
+            "type": "u64"
+          },
+          {
+            "name": "balance_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivateWithdrawFinalizedV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivateWithdrawRequestedV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "withdraw_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          },
+          {
+            "name": "expires_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RequestWithdrawPrivateV2Args",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "withdraw_commitment",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          },
+          {
+            "name": "expires_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdatePlatformRuntimeArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "vrf_queue",
+            "type": "pubkey"
+          },
+          {
+            "name": "er_validator_identity",
+            "type": "pubkey"
+          },
+          {
+            "name": "max_exposure_bps",
+            "type": "u16"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          }
+        ]
+      }
+    }
+  ]
+}

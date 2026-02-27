@@ -1,0 +1,95 @@
+:root {
+  --default-app-font-family: var(--font-outfit), sans-serif;
+  --general-text-color: var(--gray-50);
+  --general-bg: #110d18;
+
+
+  /* BRAND COLORS */
+  --brand-off-black: #140d24;
+  --brand-purple-light: #a34efe;
+  --brand-purple-light-rgb: 163, 78, 254;
+  --brand-purple-dark: #220842;
+  --brand-purple-dark-1: #7830d4;
+  --brand-purple: #9550ee;
+  --brand-purple-rgb: 149, 80, 238;
+  --brand-pink: var(--pink-400);
+  --brand-pink-rgb: var(--pink-400-rgb);
+  --brand-pink-light: #ffcef6;
+  --brand-pink-light-rgb: 255, 206, 246;
+  --brand-pink-dark: #db17af;
+  --brand-off-white: #fafcff;
+  --brand-mixed-start-1: #a651ff;
+
+  --error: var(--red-500);
+
+  --gold-100: #ebca4e;
+  --gold-200: #dda43e;
+  --gold-300: #c0861e;
+  --gold-500: #9d6216;
+
+  --silver-100: #b1c0cc;
+  --silver-200: #879aa8;
+  --silver-300: #6f8090;
+  --silver-500: #4a5762;
+
+  --leader-gold: #f5d565;
+  --leader-silver: #97a1b6;
+  --leader-bronze: #a85923;
+
+  --gray-50: #fafcff;
+  --gray-50-rgb: 250, 252, 255;
+  --gray-100: #e7ecf7;
+  --gray-200: #bdbed7;
+  --gray-300: #979ab6;
+  --gray-400: #6a6d89;
+  --gray-450: #6f6899;
+  --gray-500: #4e516d;
+  --gray-600: #383958;
+  --gray-700: #2e2d4d;
+  --gray-800: #1b182a;
+  --gray-850: rgba(19, 24, 35, 0.5);
+  --gray-900: #130d1d;
+  --gray-950: #0a0610;
+
+  --pink-400: #fda6ff;
+  --pink-400-rgb: 253, 166, 255;
+  --pink-700: #b722c4;
+  --pink-800: #8f17a2;
+  --pink-900: #62126e;
+  --pink-950: #4b0956;
+
+  --purple-50: #f9f5fe;
+  --purple-100: #f1e8fd;
+  --purple-200: #e6d7fc;
+  --purple-300: #d2b6f9;
+  --purple-400: #be93f6;
+  --purple-500: #9550ee;
+  --purple-600: #7830d4;
+  --purple-700: #531b9c;
+  --purple-800: #3b1072;
+  --purple-900: #2c0d56;
+  --purple-950: #220842;
+
+  --blue-400: #bcf9f8;
+
+  --black-900: rgba(0, 0, 0, 0.2);
+
+  --plinko-tag-100: #dbb140;
+  --plinko-tag-200: #e99445;
+  --plinko-tag-300: #dd623b;
+  --plinko-tag-400: #eb4b4b;
+  --plinko-tag-500: #db3b62;
+  --plinko-tag-600: #db3c9c;
+  --plinko-tag-700: #b337cc;
+
+  --green-100: rgba(105, 209, 191, 0.2);
+  --green-500: #55b685;
+
+  --green-500-rgb: 85, 182, 133;
+  --red-500-rgb: 219, 59, 98;
+
+  --red-500: #da5697;
+
+  --amber-300: #F5D565;
+  --amber-900: #70391A;
+}

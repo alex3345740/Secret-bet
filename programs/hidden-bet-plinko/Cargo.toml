@@ -1,0 +1,27 @@
+[package]
+name = "hidden-bet-plinko"
+version = "0.1.0"
+description = "Hidden Bet Plinko program"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "hidden_bet_plinko"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "hidden-bet-core/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+[dependencies]
+anchor-lang = { version = "=0.32.1", features = ["init-if-needed"] }
+hidden-bet-core = { path = "../hidden-bet-core", features = ["cpi"] }
+ephemeral-rollups-sdk = { version = "=0.6.5", features = ["anchor"] }
+ephemeral-vrf-sdk = { version = "=0.2.1", features = ["anchor"] }
+sha2 = "=0.10.9"
