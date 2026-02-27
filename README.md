@@ -6,4 +6,3 @@ Hidden Bet is a localnet-first Solana casino MVP with Plinko, Roulette, and Slot
 1. Anchor programs under `programs/`
 2. Next.js frontend under `app/`
 3. MagicBlock ER/PER + VRF integration hooks in on-chain instructions
-4. WSL-only compile/localnet/test workflow
